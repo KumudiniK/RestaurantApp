@@ -1,0 +1,29 @@
+<div style="background-color: bisque;">
+    <center>
+        <h3><marquee>Welcome to  {{r.Rname}}</marquee></h3>
+        <h1>Hotel {{r.Rname}}</h1>
+        <h3>{{r.address}}</h3>
+        
+        <hr/>
+        <br><br>
+        
+        <h2>Menu</h2>
+        <div>
+            <ul>
+                {%for t in t%}
+                    <li style="font-size: 17px;">{{t.item}} ------ {{t.price}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <strong>Add items here</strong>
+        <form action="/api/{{r.id}}/addItems/" method="POST">
+            Enter Menu Item:<input  type="text" name="item"><br><br>
+            Enter Price of Item:<input type="number" name="price"><br><br><br>
+            <input type="submit" value="Add Menu">
+
+        </form>
+    </center>
+</div>

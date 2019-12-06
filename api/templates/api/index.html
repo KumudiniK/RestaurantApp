@@ -1,0 +1,13 @@
+<center>
+    <div style="border: 2px solid black; background-color:bisque;">
+    
+        <h1>List Of Restaurants</h1>
+        <ul>
+            {% for r in latest_added_resto %}
+        
+            <li style="font-size: 20px;"><a href="/api/{{ r.id }}/">{{ r.Rname}}</a></li><br>
+            
+            {% endfor %}
+        </ul>
+    </div>
+</center>
