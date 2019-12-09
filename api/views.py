@@ -16,10 +16,10 @@ def index(request):
         rList={
             "Name":r.Rname,
             "address":r.address
-            }
+              }
         list.append(rList)
         
-    return HttpResponse(json.dumps(list))
+    return HttpResponse(json.dumps(list))  
 
 
 # 1st POST
@@ -30,7 +30,7 @@ def addQ(request):
         address=request.POST.get("addr")
         )   #fetch name and address of restaurant in r
     r.save()
-    return HttpResponse("200 OK")
+    return HttpResponse("Added")
 
 
 #2nd POST  
@@ -49,14 +49,14 @@ def addItems(request, restaurant_id):
         Idist={
             "MenuItem":i.item,
             "Price":i.price
-            }
+              }
         list.append(Idist)
     
     rList={
         "Name":r.Rname,
         "address":r.address,
         "list":list
-        }
+         }
     return HttpResponse(json.dumps(rList))
 
 
