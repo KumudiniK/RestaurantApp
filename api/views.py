@@ -34,7 +34,7 @@ def addQ(request):
         address=request.POST.get("addr")
     )  # fetch name and address of restaurant in r
     r.save()
-    return HttpResponse("entry added in restaurant")
+    return HttpResponse("entry added in restaurant 1")
 
 
 
