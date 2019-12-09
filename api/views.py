@@ -8,6 +8,10 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 
+def count(request):
+    r=Restaurant.objects.all().count()
+    return HttpResponse(r)
+
 # 1 st GET
 @csrf_exempt
 def index(request):
